@@ -25,6 +25,7 @@
 # solution1: # with time complexity O(n)
 def max_profit(prices):
     min_price = float('inf')
+    # float('inf') is a Python way of creating positive infinity. It represents a value that is larger than any other numerical value.
     max_price = 0
     
     for price in prices:
