@@ -47,6 +47,70 @@ print(product_of_array_except_self([-1,1,0,-3,3]))  # Output: [0,0,9,0,0]
 # Total time: O(n)
 # Total extra space: O(1)
     
+    
+    
+# 1. Brute Force (Very Slow — O(n²))
+#  Idea
+
+# For each index, multiply all other elements.
+
+#  Inefficient
+
+# Will time out for large arrays.
+
+# Code
+def product_except_self_bruteforce(nums):
+    n = len(nums)
+    answer = []
+
+    for i in range(n):
+        prod = 1
+        for j in range(n):
+            if i != j:
+                prod *= nums[j]
+        answer.append(prod)
+
+    return answer
+
+# Complexity
+
+# Time: O(n²)
+
+# Space: O(1) extra
+
+#  2. Using Division (NOT allowed in LeetCode)
+
+# Only works if no zeros are in the array.
+
+# Code
+# def product_except_self_div(nums):
+#     total_product = 1
+#     zero_count = nums.count(0)
+
+#     if zero_count > 1:
+#         return [0] * len(nums)
+
+#     for num in nums:
+#         if num != 0:
+#             total_product *= num
+
+#     answer = []
+#     for num in nums:
+#         if num == 0:
+#             answer.append(total_product)
+#         else:
+#             answer.append(total_product // num if zero_count == 0 else 0)
+
+#     return answer
+
+# Complexity
+
+# Time: O(n)
+
+# Space: O(1) extra
+
+# BUT: Not allowed because division is banned.
+    
 
 # Example 1
 
