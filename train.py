@@ -37,3 +37,35 @@ def calculate_total(item1=False, item2=False, item3=False):
 calculate_total(item1=True)
 calculate_total(item1=True, item2=True)
 calculate_total(item1=True, item2=True, item3=True)
+
+
+# Find unique combinations?
+from itertools import combinations
+from typing import List, Any
+
+def unique_combinations(items: List[Any], r: int) -> List[tuple]:
+    """
+    Returns all unique combinations of length r from the given list.
+    
+    :param items: List of elements
+    :param r: Length of each combination
+    :return: List of unique combinations (as tuples)
+    """
+    return list(combinations(items, r))
+
+# Example usage
+my_list = [1, 2, 3, 4]
+result = unique_combinations(my_list, 2)
+print(result)
+
+
+
+# 🔹 Explanation:
+
+# itertools.combinations(items, r) generates all r-length combinations without repetition.
+
+# The result is always unique tuples.
+
+# You can change r to get different combination lengths.
+
+# The order of elements in each tuple doesn’t matter (so (1,2) is the same as (2,1)).
