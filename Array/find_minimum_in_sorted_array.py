@@ -1,4 +1,4 @@
-# 🧩 Problem Statement: Find Minimum in Rotated Sorted Array
+# Problem Statement: Find Minimum in Rotated Sorted Array
 
 # You are given an array of unique integers that was originally sorted in ascending order, but then rotated at an unknown pivot index.
 
@@ -16,14 +16,32 @@
 
 # You must write an algorithm that runs in O(log n) time.
 
-# ✔️ Input
+#  Input
 
 # An integer array nums of length n, rotated at some pivot.
 
-# ✔️ Output
+#  Output
 
-# Return the minimum element in nums.
+# Return the minimum element in arr.
+def find_minimum_in_rotated_sorted_array(arr):
+    left, right = 0, len(arr) - 1
+    
+    while left < right:
+        mid = (left + right) // 2
+        
+        if arr[mid] > arr[right]:
+            left = mid + 1
+        else:
+            right = mid
+    
+    return arr[left]
 
+
+
+print(find_minimum_in_rotated_sorted_array([3,4,5,1,2])) 
+print(find_minimum_in_rotated_sorted_array([4,5,6,7,0,1,2])) 
+print(find_minimum_in_rotated_sorted_array([11,13,15,17]))  
+#  Examples
 #  Example 1
 
 # Input:
