@@ -22,6 +22,40 @@
 
 #  Output
 
+# Steps for Finding the Minimum in a Rotated Sorted Array (Binary Search Method)
+# ----------------------------------------------------------------------------------------
+
+# Start with two pointers:
+
+# left = 0
+
+# right = last index of the array
+
+# If the first element is less than the last element, the array is not rotated.
+# → The minimum is the first element. Stop.
+
+# While left is less than right, repeat:
+
+# Calculate the middle index:
+# mid = (left + right) // 2
+
+# Compare the middle element with the rightmost element.
+
+# If the middle element is greater than the rightmost element:
+# → The minimum is in the right half of the array.
+# → Move left to mid + 1.
+
+# Otherwise (middle element is less than or equal to the rightmost element):
+# → The minimum is in the left half, including mid.
+# → Move right to mid.
+
+# Continue narrowing the search range until left == right.
+
+# When left and right meet, the minimum element is at that position.
+
+# Return the element at index left.
+
+
 # Return the minimum element in arr.
 def find_minimum_in_rotated_sorted_array(arr):
     left, right = 0, len(arr) - 1
