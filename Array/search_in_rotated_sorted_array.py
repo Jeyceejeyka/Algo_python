@@ -41,7 +41,80 @@ def search_in_rotated_sorted_array(nums, target):
 print(search_in_rotated_sorted_array([4,5,6,7,0,1,2], 0))  
 print(search_in_rotated_sorted_array([4,5,6,7,0,1,2], 3))
 
+# HOW THE ALGORITHM WORKS (In Words Only)
 
+# Goal: Find target inside a rotated sorted array in O(log n).
+
+# We always track three positions:
+
+# left → start of search range
+
+# right → end of search range
+
+# mid → middle of the range
+
+# At each step we do this:
+
+#  STEP-BY-STEP LOGIC
+# Step 1 — Compute the middle
+
+# mid = (left + right) // 2
+
+# Check if nums[mid] is the target.
+
+# If yes → return mid immediately.
+
+# Step 2 — Determine which side is sorted
+
+# One side will ALWAYS be normally sorted, even after rotation.
+
+# We check:
+
+# If nums[left] ≤ nums[mid] → Left side is sorted
+# Otherwise → Right side is sorted.
+
+# Step 3 — Decide which half to search
+# ✔ CASE A — Left half is sorted
+
+# This means numbers go in normal increasing order from left → mid.
+
+# We now check:
+
+# If target is inside that left range
+# (nums[left] ≤ target < nums[mid])
+# → Then search ONLY LEFT, so move right = mid - 1
+
+# Else
+# → Target must be on the RIGHT, so move left = mid + 1
+
+# ✔ CASE B — Right half is sorted
+
+# This means numbers go in normal increasing order from mid → right.
+
+# Check:
+
+# If target is inside that right range
+# (nums[mid] < target ≤ nums[right])
+# → Search RIGHT, so left = mid + 1
+
+# Else
+# → Target is on the LEFT, so right = mid - 1
+
+# Step 4 — Shrink the search range
+
+# Keep repeating:
+
+# recompute mid
+
+# decide sorted half
+
+# eliminate one side
+
+# Until:
+
+# You find the target, or
+
+# left passes right → return -1
 
 # Example 1
 
