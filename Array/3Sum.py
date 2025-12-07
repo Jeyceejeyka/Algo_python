@@ -17,6 +17,32 @@
 
 # You may return the answer in any order.
 
+# Solution A: O(n³) (very slow)
+def three_sum(nums):
+    results = []
+    nums = sorted(nums)
+    
+    for i in range(len(nums) - 2):
+        for j in range(i + 1, len(nums) -1):
+            for k in range(j + 1, len(nums)):
+                if nums[i] + nums[j] + nums[k] == 0:
+                    triplet = [nums[i], nums[j], nums[k]]
+                    if triplet not in results:
+                        results.append(triplet)
+    return results
+
+print(three_sum([-1,0,1,2,-1,-4]))
+print(three_sum([0,1,1]))
+print(three_sum([0,0,0]))
+# HOW THE ALGORITHM WORKS (In Words Only)
+# Goal: Find all unique triplets in the array which gives the sum of zero.
+# We use three nested loops to consider every possible triplet combination in the array.
+# For each triplet, we check if the sum is zero.
+# If it is, we add it to the results list if it's not already present to avoid duplicates.
+# Finally, we return the list of unique triplets.   
+
+    
+
 
 
 # Example 1
