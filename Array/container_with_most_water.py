@@ -9,6 +9,31 @@
 
 # Notice: You may not slant the container.
 
+def container_with_most_water(arr):
+    left = 0
+    right = len(arr) - 1
+    max_area = 0
+    
+    
+    while left < right:
+        width = right -left
+        height = min(arr[left], arr[right])
+        current_area = width * height
+        max_area = max(max_area, current_area)
+        # Move the pointer pointing to the shorter line
+        if arr[left] < arr[right]:
+            left += 1   
+        else:
+            right -= 1
+    return max_area
+
+print(container_with_most_water([1,8,6,2,5,4,8,3,7]))  # Output: 49
+print(container_with_most_water([1,1]))  # Output: 1    
+
+        
+
+
+
 # Example 1
 
 # Input:
