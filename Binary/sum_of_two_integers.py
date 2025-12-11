@@ -119,6 +119,39 @@ print(addBinary("1010", "1011"))
 
 
 
+# Complexity Analysis
+# -----------------------
+
+# Let:
+
+# n = len(a)
+
+# m = len(b)
+
+# 1. Time Complexity
+
+# Loop runs max(n, m) + 1 times → O(n + m)
+
+# append is O(1) each
+
+# reversed + join is O(n + m)
+
+#  Total time complexity = O(n + m)
+
+# 2. Space Complexity
+
+# We store the result in a list of length ≤ max(n, m) + 1
+
+# O(n + m) space
+
+#  Why this is the best
+
+# You cannot do better than O(n + m) because you must look at each digit at least once.
+
+# Using a list avoids repeated string concatenation (which would make it O((n + m)²)).
+
+
+
 # Example:
 
 # Input:  a = "11", b = "1"
