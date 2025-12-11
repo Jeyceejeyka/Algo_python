@@ -30,6 +30,95 @@ def addBinary(a: str, b: str) -> str:
 print(addBinary("11", "1"))
 print(addBinary("1010", "1011"))
 
+
+
+# Step-by-Step Explanation of the while loop
+#  Condition:
+# while i >= 0 or j >= 0 or carry:
+
+
+# This says: keep looping as long as any of these are true:
+
+# There are still digits left in a (i >= 0)
+
+# There are still digits left in b (j >= 0)
+
+# There is a carry to add (carry != 0)
+
+# This is why the loop stops only when all digits are processed and there’s no carry.
+
+#  Start each loop with the carry
+# total = carry
+
+
+# Initialize total with the carry from the previous addition.
+
+# Add the digit from a (if any)
+# if i >= 0:
+#     total += int(a[i])
+#     i -= 1
+
+
+# If i is valid (there are still digits in a):
+
+# Convert the character to an integer
+
+# Add it to total
+
+# Move the pointer left (i -= 1)
+
+#  Add the digit from b (if any)
+# if j >= 0:
+#     total += int(b[j])
+#     j -= 1
+
+
+# Same as above for b.
+
+#  Calculate the current bit
+# result = str(total % 2) + result
+
+
+# % 2 gives the remainder, which is the current binary digit (0 or 1).
+
+# Prepend it to result because we are building the string from right to left.
+
+#  Update carry
+# carry = total // 2
+
+
+# // 2 gives the carry for the next column.
+
+# Example:
+
+# total = 3 → carry = 1, current bit = 1
+
+# total = 2 → carry = 1, current bit = 0
+
+# total = 1 → carry = 0, current bit = 1
+
+# Loop repeats
+
+# After updating i, j, and carry, the while loop checks the condition again.
+
+# Stops only when all digits are processed AND carry = 0.
+
+# Return final result
+# return result
+
+
+# At this point, result contains the full binary sum as a string.
+
+# Example Trace: "11" + "1"
+# Step	i	j	carry	total	digit added	result
+# 1	1	0	0	1+1+0=2	0	"0"
+# 2	0	-1	1	1+0+1=2	0	"00"
+# 3	-1	-1	1	0+0+1=1	1	"100"
+
+# Final result: "100"
+
+
+
 # Example:
 
 # Input:  a = "11", b = "1"
@@ -44,7 +133,7 @@ print(addBinary("1010", "1011"))
 
 # Strings do not contain leading zeros except the value "0".
 
-# ✅ 2. Sum of Two Integers — (Commonly known as “Add Without + or -”)
+# 2. Sum of Two Integers — (Commonly known as “Add Without + or -”)
 
 # Problem Statement:
 # Given two integers a and b, return their sum,
