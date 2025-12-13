@@ -47,7 +47,11 @@ print(numer_of_1_bits_simple_func('00000000000000000000000000001011'))
 print(numer_of_1_bits_simple_func('00000000000000000000000010000000'))  
 print(numer_of_1_bits_simple_func('11111111111111111111111111101'))  
 print(number_of_1s_bits(int('00000000000000000000000000001011', 2)))  
-print(number_of_1s_bits(int('00000000000000000000000010000000', 2)))  
+print(number_of_1s_bits(int('00000000000000000000000010000000', 2))) 
+# reasons for int('binary_string', 2):
+# The int() function in Python can convert a string representation of a number in a specified base to its integer value.
+# Here, '2' indicates that the string is in binary format.  
+ 
 print(number_of_1s_bits(int('11111111111111111111111111101', 2)))   
 print(hammingWeight(int('00000000000000000000000000001011', 2)))  
 print(hammingWeight(int('00000000000000000000000010000000', 2)))  
