@@ -21,6 +21,13 @@ def number_of_1_bits(n: str):
 def numer_of_1_bits_simple_func(n: str) -> int:
     return n.count('1')
 
+# Bit Manipulation Approach using AND and Right Shift
+def number_of_1s_bits(n: str) -> int:
+    count = 0
+    while n:
+        count += n & 1  # Increment count if the least significant bit is 1
+        n >>= 1         # Right shift n to process the next bit
+    return count
 
 # Test Cases:
 print(number_of_1_bits('00000000000000000000000000001011'))  
@@ -29,7 +36,9 @@ print(number_of_1_bits('11111111111111111111111111101'))
 print(numer_of_1_bits_simple_func('00000000000000000000000000001011')) 
 print(numer_of_1_bits_simple_func('00000000000000000000000010000000'))  
 print(numer_of_1_bits_simple_func('11111111111111111111111111101'))  
-    
+print(number_of_1s_bits(int('00000000000000000000000000001011', 2)))  
+print(number_of_1s_bits(int('00000000000000000000000010000000', 2)))  
+print(number_of_1s_bits(int('11111111111111111111111111101', 2)))   
 # Explanation:
 # The input binary string has three '1' bits.
 
