@@ -7,8 +7,17 @@
 # Example 1
 # Input:  n = 00000000000000000000000000001011
 # Output: 3
+# solution: A simple approach is to iterate through each character in the binary string and count the number of '1's.
+def number_of_1_bits(n: str): 
+    count = 0
+    for char in n:
+        if char == '1':
+            count += 1
+            
+    return count
 
-
+print(number_of_1_bits('10000000000000000000000010000000'))
+    
 # Explanation:
 # The input binary string has three '1' bits.
 
