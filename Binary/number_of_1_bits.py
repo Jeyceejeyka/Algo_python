@@ -16,7 +16,19 @@ def number_of_1_bits(n: str):
             
     return count
 
-print(number_of_1_bits('10000000000000000000000010000000'))
+
+# solution using built-in function 
+def numer_of_1_bits_simple_func(n: str) -> int:
+    return n.count('1')
+
+
+# Test Cases:
+print(number_of_1_bits('00000000000000000000000000001011'))  
+print(number_of_1_bits('00000000000000000000000010000000'))  
+print(number_of_1_bits('11111111111111111111111111101'))  
+print(numer_of_1_bits_simple_func('00000000000000000000000000001011')) 
+print(numer_of_1_bits_simple_func('00000000000000000000000010000000'))  
+print(numer_of_1_bits_simple_func('11111111111111111111111111101'))  
     
 # Explanation:
 # The input binary string has three '1' bits.
