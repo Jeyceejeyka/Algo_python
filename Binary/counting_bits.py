@@ -2,6 +2,16 @@
 # Problem Statement
 
 # Given an integer n, return an array ans of length n + 1 such that for each i (0 ≤ i ≤ n), ans[i] is the number of 1’s in the binary representation of i.
+# solution: A simple approach is to iterate through each number from 0 to n, convert each number to its binary representation using the built-in bin() function, and count the number of 1's using the count() method. We store these counts in a list and return it.
+def counting_bits(n: int):
+    ans = []
+    for i in range(n + 1):
+        # Count the number of 1's in the binary representation of i
+        count_ones = bin(i).count('1')
+        ans.append(count_ones)
+    return ans
+    
+
 
 # Example 1
 
@@ -28,6 +38,7 @@
 # Input:
 
 # n = 5
+
 
 
 # Output:
