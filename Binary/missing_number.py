@@ -3,13 +3,23 @@
 
 # Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
-# Solution: Arithemtic Sum Formula
-# We can find the missing number by calculating the expected sum of the first n natural numbers using
+# # Solution: Arithemtic Sum Formula
+# # We can find the missing number by calculating the expected sum of the first n natural numbers using
+# def missing_number(nums):
+#     n = len(nums)
+#     expected_sum = n * (n + 1) // 2
+#     actual_sum = sum(nums)
+#     return expected_sum - actual_sum
+
+# # Solution: B Optimized Approach
+# We can optimize the space complexity by calculating the expected sum directly and subtracting each number in
 def missing_number(nums):
     n = len(nums)
-    expected_sum = n * (n + 1) // 2
-    actual_sum = sum(nums)
-    return expected_sum - actual_sum
+    
+    ans = n * (n + 1) // 2
+    for num in nums:
+        ans -= num
+    return ans
 
 
 print(missing_number([3, 0, 1]))  
