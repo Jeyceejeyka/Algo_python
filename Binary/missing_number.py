@@ -12,7 +12,7 @@
 #     return expected_sum - actual_sum
 
 # # Solution: B Optimized Approach
-# We can optimize the space complexity by calculating the expected sum directly and subtracting each number in
+# We can optimize the space complexity by calculating the expected sum directly and subtracting each number in the array from it.
 def missing_number(nums):
     n = len(nums)
     
